@@ -1,8 +1,6 @@
 ﻿namespace Logging;
 
-#pragma warning disable CS8618
-
-public record SessionRecord
+public sealed record SessionRecord
 {
     public required int Id { get; set; }
 

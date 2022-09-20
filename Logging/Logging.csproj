@@ -1,15 +1,38 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AWS.Logger.NLog" Version="3.1.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.4.0-2.final" />
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="7.0.0-preview1.22403.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="NLog" Version="5.0.4" />
+    <PackageReference Include="Roslynator.Analyzers" Version="4.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Sentry.NLog" Version="3.21.0" />
+    <PackageReference Include="ZLogger" Version="1.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="SeriLogger\" />
+    <Folder Include="ZLogger\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\oscar\source\Repos\BestPractices\Logging\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\oscar\source\Repos\BestPractices\Logging\.editorconfig" />
   </ItemGroup>
 
 </Project>

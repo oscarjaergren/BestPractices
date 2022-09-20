@@ -6,11 +6,11 @@ using NLog.Config;
 using NLog.Layouts;
 using NLog.Targets;
 
-namespace Logging.Logs;
+namespace Logging.NLog;
 
-public static class LoggingConfigure
+internal static class LoggingConfigure
 {
-    public static JsonLayout GetLayout(SessionRecord? sessionRecord, string? osVersion = null)
+    internal static JsonLayout GetLayout(SessionRecord? sessionRecord, string? osVersion = null)
     {
         JsonLayout? layout = new() {IncludeEventProperties = true};
         layout.Attributes.Add(new JsonAttribute("Time", "${longdate}"));
@@ -38,7 +38,7 @@ public static class LoggingConfigure
         return layout;
     }
 
-    public static LoggingConfiguration GetLoggingConfiguration(string project, SessionRecord? sessionRecord = null)
+    internal static LoggingConfiguration GetLoggingConfiguration(string project, SessionRecord? sessionRecord = null)
     {
         LoggingConfiguration config = new();
 
@@ -57,17 +57,17 @@ public static class LoggingConfigure
         AwsConfig(project, ref config, Environment, sessionRecord);
         SentryConfig(ref config, Environment);
 
+        FileConfig(ref config, "Test", "NLogFile");
+
         LogManager.Configuration = config;
 
         return config;
     }
 
-
-    private static void FileConfig(ref LoggingConfiguration config, string targetName, string layout, string fileName)
+    private static void FileConfig(ref LoggingConfiguration config, string targetName, string fileName)
     {
         FileTarget fileTarget = new()
         {
-            Layout = layout,
             FileName = fileName
         };
         config.AddTarget(targetName, fileTarget);

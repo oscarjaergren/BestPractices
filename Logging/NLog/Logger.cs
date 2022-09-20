@@ -1,7 +1,7 @@
 ﻿using NLog;
 using NLog.Config;
 
-namespace Logging.Logs;
+namespace Logging.NLog;
 
 public static class Logging
 {

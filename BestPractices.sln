@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestPracticesConsoleApp", "BestPracticesConsoleApp\BestPracticesConsoleApp.csproj", "{8E047B46-48D5-4D7D-9E14-D285667BB380}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestPracticesConsoleApp", "BestPracticesConsoleApp\BestPracticesConsoleApp.csproj", "{8E047B46-48D5-4D7D-9E14-D285667BB380}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{1FC6BF68-B9B9-44DC-ABC2-12F9E8AF2C6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging", "Logging\Logging.csproj", "{1FC6BF68-B9B9-44DC-ABC2-12F9E8AF2C6C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{31E4297E-6B80-4462-96FB-773765807DAC}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.md = ReadMe.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

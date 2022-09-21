@@ -19,12 +19,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Sentry.NLog" Version="3.21.0" />
+    <PackageReference Include="Serilog" Version="2.12.0" />
+    <PackageReference Include="SerilogAnalyzer" Version="0.15.0" />
     <PackageReference Include="ZLogger" Version="1.6.2" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="SeriLogger\" />
-    <Folder Include="ZLogger\" />
   </ItemGroup>
 
   <ItemGroup>

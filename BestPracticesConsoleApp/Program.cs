@@ -1,8 +1,9 @@
-﻿using BestPracticesConsoleApp;
+﻿using Logging;
 using Logging.ZLogger;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+namespace BestPracticesConsoleApp;
 
 internal sealed class Program
 {
@@ -10,15 +11,12 @@ internal sealed class Program
     {
 
         await Host.CreateDefaultBuilder(args)
-               .ConfigureServices((hostContext, services) =>
-               {
-                   services.AddHostedService<ConsoleHostedService>();
-               })
-               .ConfigureLogging(logging => HostLogger.AddLogger(logging))
-               .RunConsoleAsync();
+            .ConfigureServices((hostContext, services) =>
+            {
+                services.AddHostedService<ConsoleHostedService>();
+            })
+            .ConfigureLogging(logging => HostLogger.AddLogger(logging))
+            .RunConsoleAsync();
+
     }
 }
-
-
-
-

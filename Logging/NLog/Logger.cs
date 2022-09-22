@@ -15,10 +15,7 @@ public static class Logging
 
     public static void Configure(string projectName, SessionRecord? sessionRecord = null)
     {
-        LoggingConfiguration logConfig = LoggingConfigure.GetLoggingConfiguration(projectName, sessionRecord);
-
-        LogManager.Configuration = logConfig;
-        Logger? logger = LogManager.GetCurrentClassLogger();
-        CurrentLogger = logger;
+        LogManager.Configuration = LoggingConfigure.GetLoggingConfiguration(projectName, sessionRecord);
+        CurrentLogger = LogManager.GetCurrentClassLogger();
     }
 }

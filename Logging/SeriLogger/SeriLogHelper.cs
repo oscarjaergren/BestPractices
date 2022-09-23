@@ -1,13 +1,11 @@
-﻿using System.Text;
-using Serilog;
-using Serilog.Debugging;
+﻿using Serilog;
 using Serilog.Events;
 
 namespace Logging.SeriLogger;
 
-internal sealed class SeriLogHelper
+public sealed class SeriLogHelper
 {
-    private static ILogger InitializeSerilog()
+    public static ILogger InitializeSerilog()
     {
         Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Override("Microsoft", LogEventLevel.Information)

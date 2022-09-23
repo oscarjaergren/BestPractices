@@ -3,7 +3,7 @@ using NLog.Config;
 
 namespace Logging.NLog;
 
-public static class Logging
+public static class StaticLogger
 {
     private static Logger? _currentLogger;
 

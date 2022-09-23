@@ -5,7 +5,7 @@ namespace Logging.ZLogger;
 
 public sealed class HostLogger
 {
-    public static ILoggingBuilder AddLogger(ILoggingBuilder logger)
+    public static ILoggingBuilder AddLogger(ref ILoggingBuilder logger)
     {
         // optional(MS.E.Logging):clear default providers.
         logger.ClearProviders();

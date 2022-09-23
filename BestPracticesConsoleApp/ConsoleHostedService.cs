@@ -1,8 +1,7 @@
 ﻿using BenchmarkDotNet.Running;
 using Logging;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using ZLogger;
+using Serilog;
 
 namespace BestPracticesConsoleApp;
 
@@ -10,7 +9,7 @@ internal sealed class ConsoleHostedService : IHostedService
 {
     private readonly IHostApplicationLifetime _appLifetime;
     private readonly ILogger _logger;
-
+    private int? _exitCode;
     public ConsoleHostedService(
         ILogger logger,
         IHostApplicationLifetime appLifetime)
@@ -21,7 +20,7 @@ internal sealed class ConsoleHostedService : IHostedService
 
     public Task StartAsync(CancellationToken cancellationToken)
     {
-        _logger.ZLogDebug($"Starting with arguments: {string.Join(" ", Environment.GetCommandLineArgs())}");
+        _logger.Debug($"Starting with arguments: {string.Join(" ", Environment.GetCommandLineArgs())}");
 
         _appLifetime.ApplicationStarted.Register(() =>
         {
@@ -29,14 +28,16 @@ internal sealed class ConsoleHostedService : IHostedService
             {
                 try
                 {
-                    _logger.ZLogDebug("Hello World!");
+                    _logger.Debug("Hello World!");
 
                     // Simulate real work is being done
                     var summary = BenchmarkRunner.Run<LoggerBenchmark>();
+                    _exitCode = 0;
                 }
                 catch (Exception ex)
                 {
-                    _logger.ZLogError(ex, "Unhandled exception!");
+                    _logger.Debug(ex, "Unhandled exception!");
+                    _exitCode = 1;
                 }
                 finally
                 {
@@ -51,6 +52,10 @@ internal sealed class ConsoleHostedService : IHostedService
 
     public Task StopAsync(CancellationToken cancellationToken)
     {
+        _logger.Debug($"Exiting with return code: {_exitCode}");
+
+        // Exit code may be null if the user cancelled via Ctrl+C/SIGTERM
+        Environment.ExitCode = _exitCode.GetValueOrDefault(-1);
         return Task.CompletedTask;
     }
 }

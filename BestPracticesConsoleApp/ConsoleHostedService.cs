@@ -20,7 +20,7 @@ internal sealed class ConsoleHostedService : IHostedService
 
     public Task StartAsync(CancellationToken cancellationToken)
     {
-        _logger.Debug($"Starting with arguments: {string.Join(" ", Environment.GetCommandLineArgs())}");
+        _logger.Debug("Starting with arguments: {V}", string.Join(" ", Environment.GetCommandLineArgs()));
 
         _appLifetime.ApplicationStarted.Register(() =>
         {
@@ -52,7 +52,7 @@ internal sealed class ConsoleHostedService : IHostedService
 
     public Task StopAsync(CancellationToken cancellationToken)
     {
-        _logger.Debug($"Exiting with return code: {_exitCode}");
+        _logger.Debug("Exiting with return code: {ExitCode}", _exitCode);
 
         // Exit code may be null if the user cancelled via Ctrl+C/SIGTERM
         Environment.ExitCode = _exitCode.GetValueOrDefault(-1);

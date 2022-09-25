@@ -49,6 +49,7 @@ public class LoggerBenchmark
 
         LoggingConfiguration config = new();
         DebugConfig(ref config);
+        LogManager.Configuration = config;
         StaticNLogger = LogManager.GetCurrentClassLogger();
     }
 

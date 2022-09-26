@@ -1,11 +1,8 @@
 ﻿using System.Reflection;
 using Logging.SeriLogger;
-using Logging.ZLogger;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
-using ZLogger;
 
 namespace BestPracticesConsoleApp;
 
@@ -14,7 +11,10 @@ internal sealed class Program
     private static async Task Main(string[] args)
     {
         var seriLogLogger = SeriLogHelper.InitializeSerilog();
-        var contentRootPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        string? contentRootPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+        //SeriLogHelper.InitializeSerilog();
+        //Log.Information("Hello, world!");
 
         await Host.CreateDefaultBuilder(args)
             .UseContentRoot(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location))
@@ -25,12 +25,12 @@ internal sealed class Program
             })
             .UseSerilog(seriLogLogger)
             .RunConsoleAsync();
-
-      
     }
 
-    public static IHost BuildHost(string[] args) =>
-        new HostBuilder()
+    public static IHost BuildHost(string[] args)
+    {
+        return new HostBuilder()
             .UseSerilog() // <- Add this line
             .Build();
+    }
 }

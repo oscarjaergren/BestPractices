@@ -24,27 +24,26 @@ public class LoggerBenchmark
 
     private readonly Serilog.ILogger _seriLogger;
 
-
     private readonly ILogger _zLogger;
 
     public LoggerBenchmark()
     {
         // Create SeriLogger
-        var seriLoggerFactory = LoggerFactory.Create(builder => builder.AddSerilog());
+        ILoggerFactory seriLoggerFactory = LoggerFactory.Create(builder => builder.AddSerilog());
         _seriHostLogger = new Logger<LoggerBenchmark>(seriLoggerFactory);
 
         _seriLogger = SeriLogHelper.InitializeSerilog();
 
         // Create ZLogger
-        var zLoggerFactory = LoggerFactory.Create(builder => builder.AddZLoggerConsole());
+        ILoggerFactory zLoggerFactory = LoggerFactory.Create(builder => builder.AddZLoggerConsole());
         _zLogger = new Logger<LoggerBenchmark>(zLoggerFactory);
 
         // Create nLogger
-        var nLoggerFactory = LoggerFactory.Create(builder => builder.AddNLog());
+        ILoggerFactory nLoggerFactory = LoggerFactory.Create(builder => builder.AddNLog());
         _nLogger = new Logger<LoggerBenchmark>(nLoggerFactory);
 
         // Create Microsoft logger
-        var microsoftLoggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
+        ILoggerFactory microsoftLoggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
         _microsoftLogger = new Logger<LoggerBenchmark>(microsoftLoggerFactory);
 
         LoggingConfiguration config = new();
@@ -64,13 +63,13 @@ public class LoggerBenchmark
     [Benchmark]
     public void SeriHostLogger()
     {
-        _seriHostLogger.LogDebug("Test {Number}", 1);
+        _seriHostLogger.LogInformation("Test {Number}", 1);
     }
 
     [Benchmark]
     public void SeriLogLogger()
     {
-        _seriLogger.Debug("Test");
+        _seriLogger.Information("Test");
     }
 
     [Benchmark]
@@ -82,42 +81,42 @@ public class LoggerBenchmark
     [Benchmark]
     public void LogZLogger()
     {
-        _zLogger.ZLogDebug("Test");
+        _zLogger.ZLogInformation("Test");
     }
 
     [Benchmark]
     public void LogZLogger_With_Param()
     {
-        _zLogger.ZLogDebugWithPayload(1, "Test {1}");
+        _zLogger.ZLogInformationWithPayload(1, "Test {1}");
     }
 
     [Benchmark]
     public void LogNlog()
     {
-        _nLogger.LogDebug("Test");
+        _nLogger.LogInformation("Test");
     }
 
     [Benchmark]
     public void StaticLogNlog_With_Param()
     {
-        StaticNLogger.Debug("Test {Number}", 1);
+        StaticNLogger.Info("Test {Number}", 1);
     }
 
     [Benchmark]
     public void LogNlog_With_Param()
     {
-        _nLogger.LogDebug("Test {Number}", 1);
+        _nLogger.LogInformation("Test {Number}", 1);
     }
 
     [Benchmark]
     public void MicrosoftLogger()
     {
-        _microsoftLogger.LogDebug("Test");
+        _microsoftLogger.LogInformation("Test");
     }
 
     [Benchmark]
     public void MicrosoftLogger_With_Param()
     {
-        _microsoftLogger.LogDebug("Test {Number}", 1);
+        _microsoftLogger.LogInformation("Test {Number}", 1);
     }
 }

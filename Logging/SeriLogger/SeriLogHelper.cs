@@ -1,5 +1,4 @@
 ﻿using Serilog;
-using Serilog.Events;
 
 namespace Logging.SeriLogger;
 
@@ -8,8 +7,7 @@ public sealed class SeriLogHelper
     public static ILogger InitializeSerilog()
     {
         Log.Logger = new LoggerConfiguration()
-            .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
-            .Enrich.FromLogContext()
+            .MinimumLevel.Warning()
             .WriteTo.Async(writeTo => writeTo.Console())
             .CreateLogger();
 

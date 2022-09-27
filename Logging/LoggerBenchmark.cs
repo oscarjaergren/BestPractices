@@ -16,6 +16,7 @@ namespace Logging;
 public class LoggerBenchmark
 {
     private static Logger StaticNLogger;
+
     private readonly ILogger _microsoftLogger;
 
     private readonly ILogger _nLogger;
@@ -26,6 +27,18 @@ public class LoggerBenchmark
 
     private readonly ILogger _zLogger;
 
+    /// <summary>
+    ///     So what are testing here?
+    ///     We are testing
+    ///     Nlog
+    ///     SeriLog
+    ///     Microsoft "Inbuilt" Host Logger
+    ///     ZLogger
+    ///     and how these interact with hostlogger.
+    ///     These Loggers should be used Programmatically (but other approaches may be explored)
+    ///     We test the basic functions such as an empty log message and one with parameters.
+    ///     What is important is to find whichever uses less memory, second concern is the speed.
+    /// </summary>
     public LoggerBenchmark()
     {
         // Create SeriLogger
@@ -91,19 +104,19 @@ public class LoggerBenchmark
     }
 
     [Benchmark]
-    public void LogNlog()
+    public void HostNlogger()
     {
         _nLogger.LogInformation("Test");
     }
 
     [Benchmark]
-    public void StaticLogNlog_With_Param()
+    public void StaticNlogger()
     {
         StaticNLogger.Info("Test {Number}", 1);
     }
 
     [Benchmark]
-    public void LogNlog_With_Param()
+    public void HostNlogger_With_Param()
     {
         _nLogger.LogInformation("Test {Number}", 1);
     }

@@ -13,9 +13,6 @@ public sealed class HostLogger
         // optional(MS.E.Logging): default is Info, you can use this or AddFilter to filtering log.
         logger.SetMinimumLevel(LogLevel.Debug);
 
-        // Add Console Logging.
-        logger.AddZLoggerConsole();
-
         // Add File Logging.
         logger.AddZLoggerFile("fileName.log");
 
@@ -23,7 +20,7 @@ public sealed class HostLogger
         logger.AddZLoggerRollingFile((dt, x) => $"logs/{dt.ToLocalTime():yyyy-MM-dd}_{x:000}.log",
             x => x.ToLocalTime().Date, 1024);
 
-        // Enable Structured Logging
+        //  Add Console Logging and Enable Structured Logging
         logger.AddZLoggerConsole(options => options.EnableStructuredLogging = true);
 
         return logger;

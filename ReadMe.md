@@ -1,9 +1,9 @@
-﻿INSERT READ ME INFORMATION HERE
+﻿This document includes information about ToDo:s and about rules for the code
 
+-----------------------------------------------------
+Rules
 
-* Rules
-
-All Classess should be sealed by default (ONLY OPEN UP WHEN NEEDED)
+Rule 1: All Classess should be sealed by default (ONLY OPEN UP WHEN NEEDED)
 - leads to perfomance gains
 - better code
 ---------------

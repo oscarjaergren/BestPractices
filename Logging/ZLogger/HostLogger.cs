@@ -3,6 +3,9 @@ using ZLogger;
 
 namespace Logging.ZLogger;
 
+/// <summary>
+/// https://github.com/Cysharp/ZLogger
+/// </summary>
 public sealed class HostLogger
 {
     public static ILoggingBuilder AddLogger(ref ILoggingBuilder logger)

@@ -2,6 +2,9 @@
 
 namespace Logging.SeriLogger;
 
+/// <summary>
+/// https://github.com/serilog/serilog
+/// </summary>
 public sealed class SeriLogHelper
 {
     public static ILogger InitializeSerilog()

@@ -3,6 +3,9 @@ using NLog.Config;
 
 namespace Logging.NLog;
 
+/// <summary>
+/// https://github.com/NLog/NLog
+/// </summary>
 public static class StaticLogger
 {
     private static Logger? _currentLogger;

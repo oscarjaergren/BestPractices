@@ -3,7 +3,7 @@
 namespace Logging.SeriLogger;
 
 /// <summary>
-/// https://github.com/serilog/serilog
+///     https://github.com/serilog/serilog
 /// </summary>
 public sealed class SeriLogHelper
 {

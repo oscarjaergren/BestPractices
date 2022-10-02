@@ -4,7 +4,7 @@ using ZLogger;
 namespace Logging.ZLogger;
 
 /// <summary>
-/// https://github.com/Cysharp/ZLogger
+///     https://github.com/Cysharp/ZLogger
 /// </summary>
 public sealed class HostLogger
 {

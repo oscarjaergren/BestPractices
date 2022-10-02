@@ -1,10 +1,9 @@
 ﻿using NLog;
-using NLog.Config;
 
 namespace Logging.NLog;
 
 /// <summary>
-/// https://github.com/NLog/NLog
+///     https://github.com/NLog/NLog
 /// </summary>
 public static class StaticLogger
 {

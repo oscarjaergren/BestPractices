@@ -20,3 +20,27 @@ Add more loggers and finish their implementations
 Create benchmarks for them
 
 * Fix Analyser, they do not seem to be running?
+
+
+* S: Single Responsibility Principle (SRP)
+	- every class, or similar structure, in your code should have only one job to do
+* O: Open closed Principle (OCP)
+	- A software module/class is open for extension and closed for modification
+* L: Liskov substitution Principle (LSP)
+	- You should be able to use any derived class instead of a parent class and have it behave in the same manner without modification
+* I: Interface Segregation Principle (ISP)
+	- 
+* D: Dependency Inversion Principle (DIP)
+- High-level modules/classes should not depend on low-level modules/classes. Both should depend upon abstractions. 
+
+-------------------------------------------
+Project Management
+
+* North Star
+- Learn about Concepts and best principles
+- Showcase skills
+- Learn about Project Management
+
+Useful Charts
+* Gantt Charts
+* Cost-Benefit Analysis (Instead of Pro/Cons)

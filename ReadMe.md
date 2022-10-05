@@ -44,3 +44,14 @@ Project Management
 Useful Charts
 * Gantt Charts
 * Cost-Benefit Analysis (Instead of Pro/Cons)
+
+KPI (KEY PERFOMANCE INDICATORS)
+
+
+-------------------------------------------
+
+
+ToDo:
+
+* Iteration Comparison
+https://www.youtube.com/watch?v=jUZ3VKFyB-A&t=2s

@@ -27,6 +27,11 @@ public class LoggerBenchmark
 
     private readonly ILogger _zLogger;
 
+    static LoggerBenchmark()
+    {
+        StaticNLogger = LogManager.GetCurrentClassLogger();
+    }
+
     /// <summary>
     ///     So what are testing here?
     ///     We are testing
@@ -110,7 +115,7 @@ public class LoggerBenchmark
     }
 
     [Benchmark]
-    public void StaticNlogger()
+    public static void StaticNlogger()
     {
         StaticNLogger.Info("Test {Number}", 1);
     }

@@ -10,7 +10,7 @@ public sealed class SeriLogHelper
     public static ILogger InitializeSerilog()
     {
         Log.Logger = new LoggerConfiguration()
-            .MinimumLevel.Warning()
+            .MinimumLevel.Debug()
             .WriteTo.Async(writeTo => writeTo.Console())
             .CreateLogger();
 

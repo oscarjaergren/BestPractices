@@ -114,11 +114,11 @@ public class LoggerBenchmark
         _nLogger.LogInformation("Test");
     }
 
-    [Benchmark]
-    public static void StaticNlogger()
-    {
-        StaticNLogger.Info("Test {Number}", 1);
-    }
+    //[Benchmark]
+    //public static void StaticNlogger()
+    //{
+    //    StaticNLogger.Info("Test {Number}", 1);
+    //}
 
     [Benchmark]
     public void HostNlogger_With_Param()

@@ -3,8 +3,8 @@
 -----------------------------------------------------
 Rules
 
-Rule 1: All Classess should be sealed by default (ONLY OPEN UP WHEN NEEDED)
-- leads to perfomance gains
+Rule 1: All Classes should be sealed by default (ONLY OPEN UP WHEN NEEDED)
+- leads to performance gains
 - better code
 
 ---------------
@@ -16,7 +16,7 @@ Why? https://www.youtube.com/watch?v=d76WWAD99Yo&t=15s
 Nick Chapsas: Why all your classes should be sealed by default in C#, Sep 12, 2022
 
 
-Other Perfomance Rules
+Other Performance Rules
 https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/performance-warnings
 
 
@@ -61,3 +61,12 @@ ToDo:
 
 * Iteration Comparison
 https://www.youtube.com/watch?v=jUZ3VKFyB-A&t=2s
+
+
+Relevant links:
+https://github.com/florinpop17/app-ideas
+https://github.com/quozd/awesome-dotnet#e-commerce-and-payments
+
+
+Microservices - Architecture
+https://github.com/devmentors/Pacco

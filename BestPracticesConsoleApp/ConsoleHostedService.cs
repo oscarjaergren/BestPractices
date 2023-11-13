@@ -5,18 +5,13 @@ using Serilog;
 
 namespace BestPracticesConsoleApp;
 
-internal sealed class ConsoleHostedService : IHostedService
+internal sealed class ConsoleHostedService(
+    ILogger logger,
+    IHostApplicationLifetime appLifetime) : IHostedService
 {
-    private readonly IHostApplicationLifetime _appLifetime;
-    private readonly ILogger _logger;
+    private readonly IHostApplicationLifetime _appLifetime = appLifetime;
+    private readonly ILogger _logger = logger;
     private int? _exitCode;
-    public ConsoleHostedService(
-        ILogger logger,
-        IHostApplicationLifetime appLifetime)
-    {
-        _logger = logger;
-        _appLifetime = appLifetime;
-    }
 
     public Task StartAsync(CancellationToken cancellationToken)
     {
@@ -55,7 +50,7 @@ internal sealed class ConsoleHostedService : IHostedService
         _logger.Debug("Exiting with return code: {ExitCode}", _exitCode);
 
         // Exit code may be null if the user cancelled via Ctrl+C/SIGTERM
-        Environment.ExitCode = _exitCode.GetValueOrDefault(-1);
+        Environment.ExitCode = _exitCode ?? -1;
         return Task.CompletedTask;
     }
 }

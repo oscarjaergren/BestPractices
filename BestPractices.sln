@@ -10,7 +10,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{31E4297E-6B80-4462-96FB-773765807DAC}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		CodeStylesReadMe.md = CodeStylesReadMe.md
+		ConceptsReadMe.md = ConceptsReadMe.md
 		ReadMe.md = ReadMe.md
+		ToDosReadMe.md = ToDosReadMe.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayGround", "PlayGround\PlayGround.csproj", "{B419CAB2-A1B2-4F3F-A023-F00C8BAD17EA}"

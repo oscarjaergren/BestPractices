@@ -3,16 +3,8 @@ using ZLogger;
 
 namespace BestPracticesConsoleApp;
 
-public sealed class MyClass
+public sealed class MyClass(ILogger<MyClass> logger)
 {
-    private readonly ILogger<MyClass> logger;
-
-    // get logger from DI.
-    public MyClass(ILogger<MyClass> logger)
-    {
-        this.logger = logger;
-    }
-
     public void Foo()
     {
         // log text.

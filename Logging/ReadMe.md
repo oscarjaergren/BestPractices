@@ -7,3 +7,8 @@ This project will compare
 * SeriLog
 * ZLogger
 * Microsoft Logger
+
+//ToDo:S 
+
+Add Benchmark pictures
+Add 

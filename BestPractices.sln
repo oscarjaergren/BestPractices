@@ -5,18 +5,21 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestPracticesConsoleApp", "BestPracticesConsoleApp\BestPracticesConsoleApp.csproj", "{8E047B46-48D5-4D7D-9E14-D285667BB380}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging", "Logging\Logging.csproj", "{1FC6BF68-B9B9-44DC-ABC2-12F9E8AF2C6C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{31E4297E-6B80-4462-96FB-773765807DAC}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		CodeStylesReadMe.md = CodeStylesReadMe.md
-		ConceptsReadMe.md = ConceptsReadMe.md
-		ReadMe.md = ReadMe.md
-		ToDosReadMe.md = ToDosReadMe.md
+		Solution Items\CodeStylesReadMe.md = Solution Items\CodeStylesReadMe.md
+		Solution Items\ConceptsReadMe.md = Solution Items\ConceptsReadMe.md
+		Solution Items\ConceptsReadMe.txt = Solution Items\ConceptsReadMe.txt
+		Solution Items\ReadMe.md = Solution Items\ReadMe.md
+		Solution Items\ToDosReadMe.md = Solution Items\ToDosReadMe.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayGround", "PlayGround\PlayGround.csproj", "{B419CAB2-A1B2-4F3F-A023-F00C8BAD17EA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Loggers", "Loggers", "{B20D3B7E-2AAE-4DFA-B71E-52E1F255CBFB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jargar.Playgrounds.Loggers.Benchmarks", "Loggers\Jargar.Playgrounds.Loggers.Benchmarks\Jargar.Playgrounds.Loggers.Benchmarks.csproj", "{7F78AB12-C21B-47F5-9379-337464DF7F42}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jargar.Playgrounds.Loggers", "Loggers\Jargar.Playgrounds.Loggers\Jargar.Playgrounds.Loggers.csproj", "{DD3D261C-5DEB-4187-98B7-7DD370D89657}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,17 +31,21 @@ Global
 		{8E047B46-48D5-4D7D-9E14-D285667BB380}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E047B46-48D5-4D7D-9E14-D285667BB380}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E047B46-48D5-4D7D-9E14-D285667BB380}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1FC6BF68-B9B9-44DC-ABC2-12F9E8AF2C6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1FC6BF68-B9B9-44DC-ABC2-12F9E8AF2C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1FC6BF68-B9B9-44DC-ABC2-12F9E8AF2C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1FC6BF68-B9B9-44DC-ABC2-12F9E8AF2C6C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B419CAB2-A1B2-4F3F-A023-F00C8BAD17EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B419CAB2-A1B2-4F3F-A023-F00C8BAD17EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B419CAB2-A1B2-4F3F-A023-F00C8BAD17EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B419CAB2-A1B2-4F3F-A023-F00C8BAD17EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F78AB12-C21B-47F5-9379-337464DF7F42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F78AB12-C21B-47F5-9379-337464DF7F42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F78AB12-C21B-47F5-9379-337464DF7F42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F78AB12-C21B-47F5-9379-337464DF7F42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD3D261C-5DEB-4187-98B7-7DD370D89657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD3D261C-5DEB-4187-98B7-7DD370D89657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD3D261C-5DEB-4187-98B7-7DD370D89657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD3D261C-5DEB-4187-98B7-7DD370D89657}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7F78AB12-C21B-47F5-9379-337464DF7F42} = {B20D3B7E-2AAE-4DFA-B71E-52E1F255CBFB}
+		{DD3D261C-5DEB-4187-98B7-7DD370D89657} = {B20D3B7E-2AAE-4DFA-B71E-52E1F255CBFB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0BAF7D3F-21D2-4C16-82D7-15861077672E}

@@ -1,12 +1,11 @@
 ﻿using NLog.Config;
 using NLog;
 using NLog.Targets;
-using BenchmarkDotNet.Attributes;
 using ILogger = NLog.ILogger;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 
-namespace Logging.NLog;
+namespace Jargar.Playgrounds.Loggers.NLog;
 internal class NlogBenchmark
 {
     //private static Logger StaticNLogger;

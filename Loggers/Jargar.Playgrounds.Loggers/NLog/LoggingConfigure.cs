@@ -6,13 +6,13 @@ using NLog.Config;
 using NLog.Layouts;
 using NLog.Targets;
 
-namespace Logging.NLog;
+namespace Jargar.Playgrounds.Loggers.NLog;
 
 internal static class LoggingConfigure
 {
     internal static JsonLayout GetLayout(SessionRecord? sessionRecord, string? osVersion = null)
     {
-        JsonLayout? layout = new() {IncludeEventProperties = true};
+        JsonLayout? layout = new() { IncludeEventProperties = true };
         layout.Attributes.Add(new JsonAttribute("Time", "${longdate}"));
         layout.Attributes.Add(new JsonAttribute("Level", "${level:upperCase=true}"));
         layout.Attributes.Add(new JsonAttribute("Message", "${message}"));
@@ -91,7 +91,7 @@ internal static class LoggingConfigure
 
     private static void DebugConfig(ref LoggingConfiguration config, SessionRecord? sessionRecord)
     {
-        DebuggerTarget debugTarget = new() {Layout = GetLayout(sessionRecord)};
+        DebuggerTarget debugTarget = new() { Layout = GetLayout(sessionRecord) };
         config.AddTarget("debug", debugTarget);
         LoggingRule rule1 = new("*", LogLevel.Debug, debugTarget);
         config.LoggingRules.Add(rule1);

@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace Logging.NLog;
+namespace Jargar.Playgrounds.Loggers.NLog;
 
 internal static class MethodTimeLogger
 {

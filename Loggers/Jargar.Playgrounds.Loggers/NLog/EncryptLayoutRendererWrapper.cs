@@ -3,7 +3,7 @@ using NLog.Config;
 using NLog.LayoutRenderers;
 using NLog.LayoutRenderers.Wrappers;
 
-namespace Logging.NLog;
+namespace Jargar.Playgrounds.Loggers.NLog;
 
 [LayoutRenderer("Encrypt")]
 [AmbientProperty("Encrypt")]

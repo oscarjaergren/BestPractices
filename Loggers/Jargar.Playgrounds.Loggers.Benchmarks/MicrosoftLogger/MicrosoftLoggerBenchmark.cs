@@ -1,8 +1,10 @@
 ﻿using BenchmarkDotNet.Attributes;
+using Jargar.Playgrounds.Loggers.Benchmarks.SeriLogger;
 using Microsoft.Extensions.Logging;
 
-namespace Logging.MicrosoftLogger;
-internal class MicrosoftLoggerBenchmark
+namespace Jargar.Playgrounds.Loggers.Benchmarks.MicrosoftLogger;
+
+public class MicrosoftLoggerBenchmark
 {
     private readonly ILogger _microsoftLogger;
 
@@ -10,7 +12,7 @@ internal class MicrosoftLoggerBenchmark
     {
         // Create Microsoft logger
         ILoggerFactory microsoftLoggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
-        _microsoftLogger = new Logger<LoggerBenchmark>(microsoftLoggerFactory);
+        _microsoftLogger = new Logger<SeriLogBenchmark>(microsoftLoggerFactory);
     }
 
     [Benchmark]

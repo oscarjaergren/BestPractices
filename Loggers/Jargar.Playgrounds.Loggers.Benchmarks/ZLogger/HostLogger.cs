@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using ZLogger;
 
-namespace Logging.ZLogger;
+namespace Jargar.Playgrounds.Loggers.Benchmarks.ZLogger;
 
 /// <summary>
 ///     https://github.com/Cysharp/ZLogger

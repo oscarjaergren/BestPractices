@@ -1,10 +1,12 @@
 ﻿using BenchmarkDotNet.Attributes;
+using Jargar.Playgrounds.Loggers.Benchmarks.SeriLogger;
 using Microsoft.Extensions.Logging;
 using ZLogger;
 
-namespace Logging.ZLogger;
+namespace Jargar.Playgrounds.Loggers.Benchmarks.ZLogger;
 
-internal class ZLoggerBenchmark
+[MemoryDiagnoser]
+public class ZLoggerBenchmark
 {
     private readonly ILogger _zLogger;
 
@@ -12,7 +14,7 @@ internal class ZLoggerBenchmark
     {
         // Create ZLogger
         ILoggerFactory zLoggerFactory = LoggerFactory.Create(builder => builder.AddZLoggerConsole());
-        _zLogger = new Logger<LoggerBenchmark>(zLoggerFactory);
+        _zLogger = new Logger<SeriLogBenchmark>(zLoggerFactory);
     }
 
     [Benchmark]

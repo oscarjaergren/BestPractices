@@ -1,6 +1,6 @@
 ﻿using Serilog;
 
-namespace Logging.SeriLogger;
+namespace Jargar.Playgrounds.Loggers.Benchmarks.SeriLogger;
 
 /// <summary>
 ///     https://github.com/serilog/serilog

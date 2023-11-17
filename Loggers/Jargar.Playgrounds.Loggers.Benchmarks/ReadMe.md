@@ -8,6 +8,9 @@ This project will compare
 * ZLogger
 * Microsoft Logger
 
+
+* Features
+
 //ToDo:S 
 
 Add Benchmark pictures

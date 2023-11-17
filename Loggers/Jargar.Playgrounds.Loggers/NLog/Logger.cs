@@ -1,6 +1,7 @@
-﻿using NLog;
+﻿using Jargar.Playgrounds.Loggers;
+using NLog;
 
-namespace Logging.NLog;
+namespace Jargar.Playgrounds.Loggers.NLog;
 
 /// <summary>
 ///     https://github.com/NLog/NLog

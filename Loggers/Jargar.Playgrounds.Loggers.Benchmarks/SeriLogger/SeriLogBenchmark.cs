@@ -1,20 +1,21 @@
 ﻿using BenchmarkDotNet.Attributes;
+using Jargar.Playgrounds.Loggers.Benchmarks;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
-namespace Logging.SeriLogger;
-internal class SeriLogBenchmark
+namespace Jargar.Playgrounds.Loggers.Benchmarks.SeriLogger;
+public class SeriLogBenchmark
 {
     private readonly ILogger _seriHostLogger;
 
     private readonly Serilog.ILogger _seriLogger;
 
     public SeriLogBenchmark()
-	{
+    {
         // Create SeriLogger
         ILoggerFactory seriLoggerFactory = LoggerFactory.Create(builder => builder.AddSerilog());
-        _seriHostLogger = new Logger<LoggerBenchmark>(seriLoggerFactory);
+        _seriHostLogger = new Logger<SeriLogBenchmark>(seriLoggerFactory);
 
         _seriLogger = SeriLogHelper.InitializeSerilog();
     }

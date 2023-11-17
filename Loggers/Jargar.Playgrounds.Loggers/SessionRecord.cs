@@ -1,4 +1,4 @@
-﻿namespace Logging;
+﻿namespace Jargar.Playgrounds.Loggers;
 
 public sealed record SessionRecord
 {

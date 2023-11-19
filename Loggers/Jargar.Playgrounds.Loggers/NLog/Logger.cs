@@ -1,5 +1,4 @@
-﻿using Jargar.Playgrounds.Loggers;
-using NLog;
+﻿using NLog;
 
 namespace Jargar.Playgrounds.Loggers.NLog;
 

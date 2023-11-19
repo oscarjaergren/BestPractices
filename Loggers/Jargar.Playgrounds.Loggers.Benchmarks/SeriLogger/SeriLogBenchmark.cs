@@ -1,5 +1,4 @@
 ﻿using BenchmarkDotNet.Attributes;
-using Jargar.Playgrounds.Loggers.Benchmarks;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using ILogger = Microsoft.Extensions.Logging.ILogger;

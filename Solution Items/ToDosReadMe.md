@@ -31,3 +31,4 @@ API Load Testing (Stress, Spike, Load, Soak)
 - https://devblogs.microsoft.com/dotnet/announcing-rate-limiting-for-dotnet/
 
 - Get started with .net Aspire
+- https://devblogs.microsoft.com/dotnet/introducing-dotnet-aspire-simplifying-cloud-native-development-with-dotnet-8/

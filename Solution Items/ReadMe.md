@@ -1,9 +1,12 @@
 ﻿# Jargar.Net.Playground
-This is a .NET Portfolio project encompassing everything
+Welcome to Jargar.Net.Playground, a multifaceted .NET Portfolio project that serves as a collection of micro playgrounds, each encapsulated within its own subproject and solution (SLN). 
+This project is designed to provide a diverse showcase of skills, offering learning opportunities across various aspects of development.
 
 ## Description
-The API serves as the data source and search engine for the application. 
-It accepts a search parameter and returns records that match the given search criteria from the provided JSON dataset. 
+At its core, Jargar.Net.Playground is an ensemble of interconnected micro playgrounds, each addressing distinct aspects of development. 
+From API creation and data manipulation to frontend design and testing methodologies, this project encapsulates a broad spectrum of skills and learning opportunities.
+
+
 ## Table of Contents
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
@@ -14,9 +17,7 @@ It accepts a search parameter and returns records that match the given search cr
 ## Prerequisites
 Before getting started, make sure you have the following prerequisites installed:
 
-.NET 7 SDK
-Node.js
-React
+.NET 8 SDK
 A code editor or IDE of your choice (e.g., Visual Studio or Visual Studio Code)
 
 
@@ -25,3 +26,4 @@ A code editor or IDE of your choice (e.g., Visual Studio or Visual Studio Code)
 ![Image Alt Text](Pictures/website.jpg)
 ![Image Alt Text](Pictures/searchresult.jpg)
 ![Image Alt Text](Pictures/testsuite.jpg)
+

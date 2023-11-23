@@ -10,6 +10,15 @@ public class SeriLogBenchmark
 
     private readonly Serilog.ILogger _seriLogger;
 
+    [GlobalSetup]
+    public void Setup()
+    {
+        // Configure Serilog with the desired settings
+        logger = new LoggerConfiguration()
+            .WriteTo.Console()
+            .CreateLogger();
+    }
+
     public SeriLogBenchmark()
     {
         // Create SeriLogger
@@ -34,6 +43,6 @@ public class SeriLogBenchmark
     [Benchmark]
     public void SeriLogLogger_With_Param()
     {
-        _seriLogger.Debug("Test {Number}", 1);
+        _seriLogger.Information("Test {Number}", 1);
     }
 }
